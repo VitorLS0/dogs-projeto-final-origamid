@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import PhotoComments from "./PhotoComments";
 
 const PhotoContent = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   const { photo, comments } = data;
   return (
     <div className={styles.photo}>
@@ -13,7 +13,7 @@ const PhotoContent = ({ data }) => {
       </div>
       <div className={styles.details}>
         <div>
-          <p>
+          <p className={styles.author}>
             <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             <span className={styles.visualizacoes}>{photo.acessos}</span>
           </p>
