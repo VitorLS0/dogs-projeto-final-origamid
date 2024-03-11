@@ -3,6 +3,7 @@ import Enviar from "../../Assets/enviar.svg";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/Error";
 import { COMMENT_POST } from "../../api";
+import styles from "../Photo/PhotoCommentsForm.module.css";
 
 const PhotoCommentsForm = ({ id, setComments }) => {
   const [comment, setComment] = React.useState("");
@@ -20,15 +21,16 @@ const PhotoCommentsForm = ({ id, setComments }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <textarea
+        className={styles.textarea}
         id="comment"
         name="comment"
         placeholder="Comentar"
         value={comment}
         onChange={({ target }) => setComment(target.value)}
       />
-      <button>
+      <button className={styles.button}>
         <img src={Enviar} alt="Enviar" />
       </button>
       <Error error={error} />
